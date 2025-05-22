@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projet Score Keeper</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Slayer</title>
 </head>
 <body>
-  <header id="header">
-    <h1>Score Keeper</h1>
-  </header>
   <main>
-    <h2>Score à atteindre : <span id="scoreMaxAfficher">5</span></h2>
-    <button id="resetBtn" class="btn">Reset</button>
-    <section>
-      <h3 id="team1">Team 1</h3>
-      <div id="scoreTeam1" class="score">0</div>
-      <button id="player1Btn" class="btn">player 1</button>
+    <h1>Monster Slayer</h1>
+    <section class="barres-de-vie">
+      <div class="barre-de-vie">
+        <h2>Joueur</h2>
+        <div class="barre-de-vie">
+          <div id="vie-joueur" class="barre-de-vie"></div>
+        </div>
+      </div>
+      <div class="barre-de-vie">
+        <h2>Monstre</h2>
+        <div class="barre-de-vie">
+          <div id="vie-monstre" class="barre-de-vie"></div>
+        </div>
+      </div>
     </section>
-    <section>
-      <h3 id="team2">Team 2</h3>
-      <div id="scoreTeam2" class="score">0</div>
-      <button id="player2Btn" class="btn">player 2</button>
-    </section>
+    
   </main>
-  <script src="js/score_keeper.js"></script>
-  <footer id="footer">
-    <p>© 2025 Score Keeper. Tous droits réservés.</p>
-  </footer>
+  
 </body>
 </html>
