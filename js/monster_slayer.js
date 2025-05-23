@@ -21,32 +21,31 @@ function genererNombreAleatoire(min, max) {
 }
 
 function attaquer(){
-    if (JeuLancé === true){
-    const dégats = genererNombreAleatoire(attaqueMin, attaqueMax); 
-    VieMonstre = VieMonstre - dégats;
+    if (!JeuLancé){
+        alert("Le jeu est terminé")
+        return
 }
-if (JeuLancé === false){
-    alert("Le jeu est terminé")
-    return
-}
-if (VieMonstre < 0){
+const dégats = genererNombreAleatoire(attaqueMin, attaqueMax); 
+VieMonstre = VieMonstre - dégats;
+
+if (VieMonstre <= 0){
     VieMonstre = 0;
+    alert("Le monstre est vaincu !");
+    return;
 }
 }
 
 function attaqueSpéciale(){
-    if (JeuLancé === true){
-    const dégats = genererNombreAleatoire(attaqueSpécialeMin, attaqueSpécialMax);
-    VieMonstre = VieMonstre - dégats;
+if (!JeuLancé){
+   alert("Le jeu est terminé")
+   return
 }
-if (JeuLancé === false){
-    alert("Le jeu est terminé")
-    return
-}
-if (VieMonstre < 0){
-    VieMonstre = 0;
-}
-}
-    
+const dégats = genererNombreAleatoire(attaqueSpécialeMin, attaqueSpécialMax);
+VieMonstre = VieMonstre - dégats;
 
-    
+if (VieMonstre <= 0){
+    VieMonstre = 0;
+    alert("Le monstre est vaincu !");
+    return;
+}
+}
