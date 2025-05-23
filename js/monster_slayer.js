@@ -5,7 +5,7 @@ let VieMonstre = 100;
 let JeuLancé = true;
 const attaqueMin = 10 ;
 const attaqueMax = 20;
-const attaqueSpéciale = 25;
+const attaqueSpécialeMin = 25;
 const attaqueSpécialMax = 50;
 const soin = 20;
 
@@ -35,6 +35,17 @@ if (VieMonstre < 0){
 }
 
 function attaqueSpéciale(){
+    if (JeuLancé === true){
+    const dégats = genererNombreAleatoire(attaqueSpécialeMin, attaqueSpécialMax);
+    VieMonstre = VieMonstre - dégats;
+}
+if (JeuLancé === false){
+    alert("Le jeu est terminé")
+    return
+}
+if (VieMonstre < 0){
+    VieMonstre = 0;
+}
 }
     
 
