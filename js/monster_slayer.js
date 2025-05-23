@@ -37,6 +37,8 @@ const viePourcentage = (VieMonstre / 100) * 100;
 document.getElementById('vie-monstre').style.width = viePourcentage + '%';
 alert(`Le monstre a ${viePourcentage}% de vie restante`);
 }
+document.getElementById('btn-attaque').addEventListener('click', attaquer);
+
 
 
 function attaqueSpéciale(){
@@ -53,10 +55,11 @@ VieMonstre = 0;
 alert("Le monstre est vaincu !");
 JeuLancé = false;
 }
+
 const viePourcentage = (VieMonstre / 100) * 100;
 document.getElementById('vie-monstre').style.width = viePourcentage + '%';
 alert(`Le monstre a ${viePourcentage}% de vie restante`);
 
 }
-  
+document.getElementById('btn-special').addEventListener('click', attaqueSpéciale);
 
