@@ -1,3 +1,43 @@
+body {
+  background-color: #1e1e1e;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  margin: 0;
+  padding: 0;
+}
 
+#header {
+  background-color: #0f0f0f;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid rgb(255, 116, 255);
+}
+#header .titre {
+  font-size: 1.5rem;
+  color: rgb(255, 116, 255);
+  text-shadow: 0 0 5px rgb(255, 116, 255);
+}
+
+#vie-joueur,
+#vie-monstre {
+  height: 20px;
+  background: rgb(255, 116, 255);
+  transition: width 0.3s ease-in-out;
+  border: 1px solid #fff;
+}
+
+button {
+  font-family: "Press Start 2P", cursive;
+  background: black;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: lime;
+  color: black;
+}
 
 /*# sourceMappingURL=style.css.map */
