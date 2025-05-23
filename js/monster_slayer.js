@@ -63,3 +63,17 @@ alert(`Le monstre a ${viePourcentage}% de vie restante`);
 }
 document.getElementById('btn-special').addEventListener('click', attaqueSpéciale);
 
+function soigner(){
+    if (!JeuLancé){
+        alert("Le jeu est terminé");
+        return;
+    }
+    VieJoueur += soin;
+    if (VieJoueur > 100){
+        VieJoueur = 100;
+    }
+    const viePourcentage = (VieJoueur / 100) * 100;
+    document.getElementById('vie-joueur').style.width = viePourcentage + '%';
+    alert(`Le joueur a ${viePourcentage}% de vie restante`);
+}
+document.getElementById('btn-soin').addEventListener('click', soigner);
