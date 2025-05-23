@@ -22,23 +22,27 @@ function genererNombreAleatoire(min, max) {
 
 function attaquer(){
     if (!JeuLancé){
-        alert("Le jeu est terminé")
-        return
-}
-const dégats = genererNombreAleatoire(attaqueMin, attaqueMax); 
-VieMonstre = VieMonstre - dégats;
+        alert("Le jeu est terminé");
+        return;
+    }
 
-if (VieMonstre <= 0){
-    VieMonstre = 0;
-    alert("Le monstre est vaincu !");
-    JeuLancé = false;
-}
-const viePourcentage = (VieMonstre / 100) * 100;
-document.getElementById('vie-monstre').style.width = viePourcentage + '%';
-attaqueMonstre();
+    const dégats = genererNombreAleatoire(attaqueMin, attaqueMax); 
+    VieMonstre -= dégats;
+
+    if (VieMonstre <= 0){
+        VieMonstre = 0;
+        const viePourcentage = (VieMonstre / 100) * 100;
+        document.getElementById('vie-monstre').style.width = viePourcentage + '%';
+        alert("Le monstre est vaincu !");
+        JeuLancé = false;
+        return; // 🔴 on sort ici : le monstre n'attaque pas !
+    }
+
+    const viePourcentage = (VieMonstre / 100) * 100;
+    document.getElementById('vie-monstre').style.width = viePourcentage + '%';
+    attaqueMonstre();
 }
 document.getElementById('btn-attaque').addEventListener('click', attaquer);
-
 
 
 function attaqueSpéciale(){
@@ -75,6 +79,7 @@ function soigner(){
     const viePourcentage = (VieJoueur / 100) * 100;
     document.getElementById('vie-joueur').style.width = viePourcentage + '%';
     alert(`Le joueur a ${viePourcentage}% de vie restante`);
+    attaqueMonstre();
 }
 document.getElementById('btn-soin').addEventListener('click', soigner);
 
