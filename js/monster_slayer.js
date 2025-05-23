@@ -15,7 +15,14 @@ function genererNombreAleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
 function attaquer(){
+    if (JeuLancé === true){
+
 }
+if (JeuLancé === false){
+    alert("Le jeu est terminé")
+    return
+}
+}
+
     
