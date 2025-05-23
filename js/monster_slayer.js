@@ -14,6 +14,7 @@ function abandonner() {
     JeuLancé = false;
     alert("Tu as abandonné le combat !");
 }
+document.getElementById('btn-abandon').addEventListener('click', abandonner);
 
 function genererNombreAleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
