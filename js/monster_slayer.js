@@ -35,7 +35,7 @@ if (VieMonstre <= 0){
 }
 const viePourcentage = (VieMonstre / 100) * 100;
 document.getElementById('vie-monstre').style.width = viePourcentage + '%';
-alert(`Le monstre a ${viePourcentage}% de vie restante`);
+attaqueMonstre();
 }
 document.getElementById('btn-attaque').addEventListener('click', attaquer);
 
@@ -58,7 +58,7 @@ JeuLancé = false;
 
 const viePourcentage = (VieMonstre / 100) * 100;
 document.getElementById('vie-monstre').style.width = viePourcentage + '%';
-alert(`Le monstre a ${viePourcentage}% de vie restante`);
+attaqueMonstre();
 
 }
 document.getElementById('btn-special').addEventListener('click', attaqueSpéciale);
@@ -77,3 +77,21 @@ function soigner(){
     alert(`Le joueur a ${viePourcentage}% de vie restante`);
 }
 document.getElementById('btn-soin').addEventListener('click', soigner);
+
+
+function attaqueMonstre() {
+const degats = genererNombreAleatoire(5, 15); // dégâts du monstre
+VieJoueur -= degats;
+    
+if (VieJoueur < 0) VieJoueur = 0;
+const pourcentage = (VieJoueur / 100) * 100;
+document.getElementById('vie-joueur').style.width = pourcentage + '%';
+    
+if (VieJoueur === 0) {
+alert("Tu as été vaincu !");
+JeuLancé = false;
+
+} else {
+alert(`Le monstre t’a attaqué ! Il te reste ${pourcentage}% de vie`);
+}
+}
