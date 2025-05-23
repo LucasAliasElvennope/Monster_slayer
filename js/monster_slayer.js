@@ -34,4 +34,8 @@ if (VieMonstre < 0){
 }
 }
 
+function attaqueSpéciale(){
+}
+    
+
     
