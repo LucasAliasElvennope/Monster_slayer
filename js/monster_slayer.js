@@ -31,21 +31,32 @@ VieMonstre = VieMonstre - dégats;
 if (VieMonstre <= 0){
     VieMonstre = 0;
     alert("Le monstre est vaincu !");
-    return;
+    JeuLancé = false;
 }
+const viePourcentage = (VieMonstre / 100) * 100;
+document.getElementById('vie-monstre').style.width = viePourcentage + '%';
+alert(`Le monstre a ${viePourcentage}% de vie restante`);
 }
+
 
 function attaqueSpéciale(){
 if (!JeuLancé){
-   alert("Le jeu est terminé")
-   return
+alert("Le jeu est terminé");
+return;
 }
+
 const dégats = genererNombreAleatoire(attaqueSpécialeMin, attaqueSpécialMax);
-VieMonstre = VieMonstre - dégats;
+VieMonstre -= dégats;
 
 if (VieMonstre <= 0){
-    VieMonstre = 0;
-    alert("Le monstre est vaincu !");
-    return;
+VieMonstre = 0;
+alert("Le monstre est vaincu !");
+JeuLancé = false;
 }
+const viePourcentage = (VieMonstre / 100) * 100;
+document.getElementById('vie-monstre').style.width = viePourcentage + '%';
+alert(`Le monstre a ${viePourcentage}% de vie restante`);
+
 }
+  
+
