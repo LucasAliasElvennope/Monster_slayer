@@ -1,3 +1,5 @@
+'use strict';
+
 let VieJoueur = 100;
 let VieMonstre = 100;
 let JeuLancé = true;
