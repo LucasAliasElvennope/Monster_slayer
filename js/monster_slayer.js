@@ -9,9 +9,10 @@ const attaqueSpéciale = 25;
 const attaqueSpécialMax = 50;
 const soin = 20;
 
+function genererNombreAleatoire(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-
-
-
+    
 
     
